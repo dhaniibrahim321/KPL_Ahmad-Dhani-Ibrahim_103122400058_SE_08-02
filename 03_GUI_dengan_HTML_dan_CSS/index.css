@@ -1,0 +1,20 @@
+body {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+}
+
+textarea{
+    display: block;
+    margin:auto;
+}
+
+.kotak-input{
+    display: block;
+    resize: none;
+}
+
+p > span {
+    color: coral;
+    font-weight: bold;
+}
+
