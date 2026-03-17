@@ -1,0 +1,28 @@
+const editorElement = document.getElementById("editor-kecil");
+const hk = document.getElementById("hk");
+const hb = document.getElementById("hb");
+const charCountElement = document.getElementById("hf");
+
+editorElement.addEventListener("input", (event) =>{
+    const textLength = event.target.value;
+    const totalHuruf = (textLength.match(/[a-zA-Z]/g) || []).length;
+    const hurufBesar = (textLength.match(/[A-Z]/g) || []).length;
+    const hurufKecil = (textLength.match(/[a-z]/g) || []).length;
+
+    charCountElement.textContent = totalHuruf;
+    hb.textContent = hurufBesar;
+    hk.textContent = hurufKecil; 
+});
+
+const btnBesar = document.getElementById("huruf-besar");
+const btnKecil = document.getElementById("huruf-kecil");
+
+btnBesar.addEventListener ("click", () => {
+    editorElement.value = editorElement.value.toUpperCase();
+    editorElement.dispatchEvent(new Event("input"));
+});
+
+btnKecil.addEventListener ("click", ()=> {
+    editorElement.value = editorElement.value.toLowerCase();
+    editorElement.dispatchEvent(new Event("input"));
+});
